@@ -41,7 +41,7 @@ internal fun updateAppWidget(
     context.toast("widget Text= $widgetText")
     val pendingIntent = PendingIntent.getActivity(context, appWidgetId, Intent(context, MainActivity::class.java), 0)
     val views = RemoteViews(context.packageName, R.layout.pedo_meter_widget)
-    views.setTextViewText(R.id.appwidget_text, widgetText)
+    views.setTextViewText(R.id.appwidget_text, "${widgetText} steps")
     views.setOnClickPendingIntent(R.id.pedowidget, pendingIntent)
     appWidgetManager.updateAppWidget(appWidgetId, views)
 }
